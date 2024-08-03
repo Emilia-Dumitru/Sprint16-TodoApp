@@ -4,6 +4,7 @@ import Input from "./components/input/Input";
 import TodoItem from "./components/todo-item/TodoItem";
 import TextArea from "./components/input/TextArea";
 import Button from "./components/button/Button";
+import Modal from "./components/modal/Modal";
 import "./App.css";
 
 const TODOS_MOCK = [
@@ -70,7 +71,12 @@ function App() {
     );
     setTodos(updatedTodos);
   };
-  
+  const [open, setOpen] = useState(false);
+  const handleClose = () => { setOpen(false); };
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   return (
     <div className="App">
       <div className="app-container">
@@ -96,7 +102,9 @@ function App() {
 
         <Card>
           <h1>My todos</h1>
-          <Button onClick={() => console.log("Open Modal")}>Add +</Button>
+          <Modal isOpen={open} onClose={handleClose}>
+            </Modal>
+            < Button onClick={handleOpen}>Add +</Button>
           <div className="list-container">
             {todos.filter(todo => !todo.completed).map(todo => (
               <TodoItem
