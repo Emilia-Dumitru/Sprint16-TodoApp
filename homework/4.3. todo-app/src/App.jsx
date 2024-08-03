@@ -70,7 +70,7 @@ function App() {
     );
     setTodos(updatedTodos);
   };
-
+  
   return (
     <div className="App">
       <div className="app-container">
@@ -90,7 +90,7 @@ function App() {
               onChange={handleInputChange}
               placeholder="Description"
             />
-            <Button type="submit">Create</Button>
+            <Button disabled={!newTodo.title + !newTodo.description} type="submit">Create</Button>
           </form>
         </Card>
 
