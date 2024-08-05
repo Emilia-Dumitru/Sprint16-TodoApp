@@ -40,7 +40,7 @@ const TodoItem = ({ id, completed, title, description, onToggleCompleted, onDele
             onChange={handleCheckboxChange}
           />
           {isEditing ? (
-            <input
+            <input id="input-title"
               type="text"
               value={editedTitle}
               onChange={(e) => setEditedTitle(e.target.value)}
@@ -52,8 +52,8 @@ const TodoItem = ({ id, completed, title, description, onToggleCompleted, onDele
         <div>
           {isEditing ? (
             <>
-              <button onClick={handleSaveClick}>Save</button>
-              <button onClick={handleCancelClick}>Cancel</button>
+              <button id="btn-save" onClick={handleSaveClick}>Save</button>
+              <button id="btn-cancel" onClick={handleCancelClick}>Cancel</button>
             </>
           ) : (
             <>

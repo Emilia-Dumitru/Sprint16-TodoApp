@@ -103,8 +103,8 @@ function App() {
         <Card>
           <h1>My todos</h1>
           <Modal isOpen={open} onClose={handleClose}>
-            </Modal>
-            < Button onClick={handleOpen}>Add +</Button>
+          </Modal>
+          < Button onClick={handleOpen}>Add +</Button>
           <div className="list-container">
             {todos.filter(todo => !todo.completed).map(todo => (
               <TodoItem
